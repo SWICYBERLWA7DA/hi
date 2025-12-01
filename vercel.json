@@ -1,35 +1,26 @@
 {
-  "functions": {
-    "api/hy.py": {
-      "runtime": "python3.9",
-      "maxDuration": 30
-    }
-  },
-  "rewrites": [
+  "builds": [
     {
-      "source": "/hi/hy.py",
-      "destination": "/api/hy.py"
-    },
-    {
-      "source": "/hi/hy",
-      "destination": "/api/hy.py"
-    },
-    {
-      "source": "/hy",
-      "destination": "/api/hy.py"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/api/hy.py"
+      "src": "api/hy.py",
+      "use": "@vercel/python"
     }
   ],
-  "headers": [
+  "routes": [
     {
-      "source": "/(.*)",
-      "headers": [
-        { "key": "Access-Control-Allow-Origin", "value": "*" },
-        { "key": "Cache-Control", "value": "no-store, no-cache, must-revalidate, max-age=0" }
-      ]
+      "src": "/hi/hy.py",
+      "dest": "/api/hy.py"
+    },
+    {
+      "src": "/hi/hy",
+      "dest": "/api/hy.py"
+    },
+    {
+      "src": "/hy",
+      "dest": "/api/hy.py"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/api/hy.py"
     }
   ]
 }
