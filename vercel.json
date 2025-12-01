@@ -1,0 +1,34 @@
+{
+  "functions": {
+    "api/hy.py": {
+      "runtime": "python3.9",
+      "maxDuration": 30
+    }
+  },
+  "routes": [
+    {
+      "src": "/hi/hy.py",
+      "dest": "/api/hy.py",
+      "methods": ["GET", "POST"]
+    },
+    {
+      "src": "/hi/hy",
+      "dest": "/api/hy.py",
+      "methods": ["GET", "POST"]
+    },
+    {
+      "src": "/hy",
+      "dest": "/api/hy.py",
+      "methods": ["GET", "POST"]
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Cache-Control", "value": "no-store, no-cache, must-revalidate, max-age=0" }
+      ]
+    }
+  ]
+}
