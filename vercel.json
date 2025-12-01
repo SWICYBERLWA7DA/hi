@@ -5,21 +5,22 @@
       "maxDuration": 30
     }
   },
-  "routes": [
+  "rewrites": [
     {
-      "src": "/hi/hy.py",
-      "dest": "/api/hy.py",
-      "methods": ["GET", "POST"]
+      "source": "/hi/hy.py",
+      "destination": "/api/hy.py"
     },
     {
-      "src": "/hi/hy",
-      "dest": "/api/hy.py",
-      "methods": ["GET", "POST"]
+      "source": "/hi/hy",
+      "destination": "/api/hy.py"
     },
     {
-      "src": "/hy",
-      "dest": "/api/hy.py",
-      "methods": ["GET", "POST"]
+      "source": "/hy",
+      "destination": "/api/hy.py"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/api/hy.py"
     }
   ],
   "headers": [
